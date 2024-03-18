@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Caricamento Immagine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .btn {
+            border: 2px solid gray;
+            color: gray;
+            background-color: white;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer; /* Aggiunge l'effetto di un puntatore al passaggio del mouse sopra il pulsante */
+        }
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Carica la tua immagine</h2>
+        <!-- Modifica qui: aggiunto il tag form -->
+        <form action="http://localhost:3000/upload" method="post" enctype="multipart/form-data">
+            <div class="upload-btn-wrapper">
+                <button type="button" class="btn">Scegli un file</button>
+                <!-- Modifica qui: aggiunto l'attributo name='file' per essere consistente con il server -->
+                <input type="file" name="file" />
+            </div>
+            <!-- Modifica qui: aggiunto il pulsante di invio -->
+            <input type="submit" value="Carica" class="btn" />
+        </form>
+    </div>
+</body>
+</html>
